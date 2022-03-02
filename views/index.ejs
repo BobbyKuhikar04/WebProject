@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+        .centere{
+            text-align: center;
+            min-width: 400px;
+  max-width: 1400px;
+  font-size: 14px;
+  font-family: sans-serif;
+  margin: auto;
+  
+            
+            font-weight: bolder;
+            font-size: 3em;
+        }
+        .maintable{align-items: center;
+            min-width: 400px;
+  max-width: 1400px;
+  font-size: 14px;
+  font-family: sans-serif;
+  margin: auto;
+  padding: 10px;
+        }
+        body{
+            background-color: blanchedalmond;
+        }
+        thead{
+            font-size: 20px;
+            background-color: rgb(1, 39, 36);
+
+        }
+        th,td{
+           text-align: center;
+        }
+        .spacer{
+            margin: 5px;
+            max-width: 700px;
+            min-width: 30px;
+        }
+    </style>
+    <title>LeaderBoard</title>
+  </head>
+  <body><div>
+      <div class="centere">LeaderBoard</div>
+    <table class="table table-hover table-dark maintable">
+      <thead>
+        <tr>
+          <th scope="col">Rank</th>
+          <th scope="col">Name</th>
+          <th scope="col">Points</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for (const child of data.rows) {%>
+
+        <tr>
+          <th scope="row"><%=child[0]%></th>
+          <td><%=child[1]%></td>
+          <td><%=child[2]%></td>
+        </tr>
+
+        <%}%>
+      </tbody>
+    </table>
+    <form action="/update" method="POST" class="container">
+        <div class="">To update any user's data fill this form, the data will be updated in database</div>
+        <div><label for="username">Username:<input type="String" class="form-control" name="name" placeholder="Type username only" /></label></div>
+        <label for="Points">Points:<input type="Number" class="form-control" name="points" placeholder="Type updated points" /></label>
+        <button class="spacer">update</button>
+      </form>
+  </body>
+</html>

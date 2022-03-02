@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "mongodb": "^4.4.0",
+    "mongoose": "^6.2.4",
+    "path": "^0.12.7",
+    "redis": "^4.0.4"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "leaderboard",
+  "version": "1.0.0",
+  "description": "this is a leaderboard which displays top 10 highest scorers",
+  "main": "server.js",
+  "devDependencies": {},
+  "author": "Bobby Kuhikar",
+  "license": "ISC"
+}
